@@ -1,28 +1,55 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+import { BrowserRouter as Router,  Route,} from 'react-router-dom';
+
 import './App.css';
+import Navbar from './components/header/Navbar';
+import Trends from './components/Trends';
+import Loginin from './components/Loginin';
+import DarusoNews from './components/DarusoNews';
+import Footer from './components/Footer';
+import CoictNews from './components/CoictNews';
+import Related from './components/Related';
+import Click from './components/Click';
+
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+  constructor(props) {
+    super(props);
+    this.state = {  }
+  }
+  render() { 
+    return <Router>
+     <div>
+     <Navbar /> 
+     <Route exact path='/Click' component={Click} />
+
+    <div className="container ">
+     <div className="row">
+     <div className="col-8">
+     <Route exact path='/' component={Trends} />
+     <Route exact path='/' component={DarusoNews} />
+     <Route exact path='/' component={CoictNews} />
+
+     <Route exact path='/DarusoNews' component={DarusoNews} />
+     <Route exact path='/CoictNews' component={CoictNews} />
+    <Route exact path='/Loginin' component={Loginin} />
+
+
       </div>
-    );
+      <div className="col-4">
+      <Route exact path='/' component={Related} />
+
+      </div>
+       </div>
+    </div>
+    <Route exact path='/' component={Footer} />
+
+   </div>
+   
+
+   </Router> ;
   }
 }
-
+ 
 export default App;

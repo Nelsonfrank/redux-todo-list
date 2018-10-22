@@ -21,7 +21,7 @@ class App extends Component {
   render() { 
     return <Router>
      <div>
-     <Navbar /> 
+      <Navbar /> 
      <Route exact path='/Click' component={Click} />
 
     <div className="container ">

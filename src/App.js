@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router,  Route,} from 'react-router-dom';
 
 import './App.css';
-import Navbar from './components/header/Navbar';
+import Navbar from './components/Navbar';
 import Trends from './components/Trends';
 import Loginin from './components/Loginin';
 import DarusoNews from './components/DarusoNews';
